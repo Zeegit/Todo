@@ -15,8 +15,7 @@ export class TasksComponent implements OnInit {
 
   // Вызывается после создания компонента
   ngOnInit(): void {
-    this.tasks = this.dataHandler.getTasks();
-    console.log(this.tasks);
+    this.dataHandler.taskSubject.subscribe(tasks => this.tasks = tasks);
   }
 
 }
